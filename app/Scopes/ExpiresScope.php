@@ -19,6 +19,6 @@ class ExpiresScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         $tableName = $model->getTable();
-        $builder->whereNull("$tableName.expires_on")->orWhere("$tableName.expires_on", '>=', Carbon::now());
+        $builder->whereNull("$tableName.expires_on")->orWhere("$tableName.expires_on", '>', Carbon::now());
     }
 }
