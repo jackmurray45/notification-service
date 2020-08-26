@@ -19,8 +19,8 @@ class Token extends Authenticatable
      * @var array
      */
 
-    protected $fillable = [
-        'name', 'token', 'validated_on', 'expires_on'
+    protected $guarded = [
+        'id'
     ];
 
     protected $hidden = [
