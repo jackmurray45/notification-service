@@ -14,7 +14,7 @@ class StoreRole extends FormRequest
      */
     public function authorize()
     {
-        return $this->getMethod() == 'POST' ? auth()->user()->can('Create Role') : auth()->user()->can('Update Role');
+        return $this->getMethod() == 'POST' ? auth()->user()->can('Create Roles') : auth()->user()->can('Update Roles');
     }
 
     /**
@@ -27,7 +27,7 @@ class StoreRole extends FormRequest
 
         $rules = [
             'name' => "required|max:255|unique:roles",
-            'permissions' => ['required', 'array', new ValidatePermissions()],
+            'permissions' => ['array', new ValidatePermissions()],
         ];
 
         $roleId = app('request')->segment(3);
