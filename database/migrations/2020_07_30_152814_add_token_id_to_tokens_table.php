@@ -14,7 +14,7 @@ class AddTokenIdToTokensTable extends Migration
     public function up()
     {
         Schema::table('tokens', function (Blueprint $table) {
-            $table->foreignId('token_id')->constrained('tokens')->nullable();
+            $table->foreignId('token_id')->nullable()->constrained('tokens');
         });
     }
 
