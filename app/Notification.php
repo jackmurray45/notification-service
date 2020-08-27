@@ -17,8 +17,8 @@ class Notification extends Model
         return $this->hasMany(NotificationLog::class);
     }
 
-    protected $fillable = [
-        'type', 'content', 'markdown', 'recipients', 'send_now', 'token_id'
+    protected $guarded = [
+        'id'
     ];
 
     protected $hidden = [
