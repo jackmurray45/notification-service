@@ -39,6 +39,11 @@ class Token extends Authenticatable
         'expires_on' => 'datetime',
     ];
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     public function tokens()
     {
         return $this->hasMany(Token::class);
